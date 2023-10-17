@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('imagenes/img2.jpg'); /* Reemplaza 'tu_imagen_de_fondo.jpg' con el nombre de tu imagen */
+    background-size: cover;
+    background-position: center;
+}
+
+.welcome-container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente para resaltar el contenido para los formularios*/
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-label {                       /*  formato de campos del informe */
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.form-input {                       /*  formato de campos del informe */
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+
+/* Estilos generales para las tablas */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+/* Estilo para las celdas de encabezado (th) */
+th {
+    background-color: #f2f2f2;
+    text-align: left;
+    padding: 8px;
+}
+
+/* Estilo para las celdas de datos (td) */
+td {
+    text-align: left;
+    padding: 8px;
+}
+
+/* Estilo para las filas alternas (para crear un efecto de filas alternadas) */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1em;
+    font-family: sans-serif;
+    min-width: 450px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+    background-color: #980081;
+    color: #ffffff;
+    text-align: middle;
+}
+.styled-table th, .styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+
+.venta-container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.login-container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
