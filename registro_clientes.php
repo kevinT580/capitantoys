@@ -21,7 +21,7 @@ if (isset($_SESSION["nombre"])) {
     <div class="welcome-container">
         <p class="welcome-text">¡Bienvenido!</p>
         <div class="button-container">
-            <form action="ConexionBD/insertar_cliente" method="POST">
+            <form action="ConexionBD/insertar_cliente.php" method="POST">
           
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
@@ -34,7 +34,7 @@ if (isset($_SESSION["nombre"])) {
                 <br><br>
                 <input type="submit" value="Registrar Cliente" class="button">
                 <br><br>
-                <a class="button" href="https://ctoys.000webhostapp.com/reporte_clientes">Ver Clientes Registrados</a>
+                <a class="button" href="http://localhost/capitantoys/capitantoys/reporte_clientes.php">Ver Clientes Registrados</a>
             </form>
         </div>
     </div>
@@ -45,7 +45,7 @@ if (isset($_SESSION["nombre"])) {
     <script>
         function regresarAIndex() {
             // Redireccionar a index.php
-            window.location.href = "https://ctoys.000webhostapp.com/dashboard";
+            window.location.href = "http://localhost/capitantoys/capitantoys/dashboard.php";
         }
     </script>
    

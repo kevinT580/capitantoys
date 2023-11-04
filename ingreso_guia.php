@@ -17,7 +17,7 @@ if (isset($_SESSION["nombre"])) {
     <div class="welcome-container">
         <p class="welcome-text">¡Bienvenido!</p>
         <div class="button-container">
-        <form action="ConexionBD/insertarguia" method="POST">
+        <form action="ConexionBD/insertarguia.php" method="POST">
     <label for="numguia">GUÍA:</label>
     <input type="text" id="numguia" name="numguia" required>
     <br><br>
@@ -44,7 +44,7 @@ if (isset($_SESSION["nombre"])) {
     <script>
         function regresarAIndex() {
             // Redireccionar a index.php
-            window.location.href = "https://ctoys.000webhostapp.com/dashboard";
+            window.location.href = "http://localhost/capitantoys/capitantoys/dashboard.php";
         }
     </script>
 </body>

@@ -8,6 +8,6 @@ $_SESSION = array();
 session_destroy();
 
 // Redirigir al usuario a la página de inicio de sesión o a donde desees
-header("Location: https://ctoys.000webhostapp.com");
+header("Location: http://localhost/capitantoys/capitantoys/");
 exit();
 ?>

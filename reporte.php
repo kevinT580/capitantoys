@@ -137,7 +137,7 @@ if (isset($_GET['clear']) && $_GET['clear'] == 'true') {
 <script>
 function regresarAIndex() {
     // Redireccionar a la página principal
-    window.location.href = "https://ctoys.000webhostapp.com/dashboard";
+    window.location.href = "http://localhost/capitantoys/capitantoys/dashboard.php";
 }
 
 </script>

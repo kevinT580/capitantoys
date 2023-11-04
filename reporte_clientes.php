@@ -67,7 +67,7 @@
     <script>
         function regresarAIndex() {
             // Redireccionar a registro_clientes
-            window.location.href = "https://ctoys.000webhostapp.com/registro_clientes";
+            window.location.href = "http://localhost/capitantoys/capitantoys/registro_clientes.php";
         }
     </script>
         </table>

@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <script>
     function regresarAIndex() {
         // Redireccionar a la página principal
-        window.location.href = "https://ctoys.000webhostapp.com/guia";
+        window.location.href = "http://localhost/capitantoys/capitantoys/guia.php";
     }
 </script>
 </html>

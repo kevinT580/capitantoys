@@ -10,7 +10,7 @@
     <div class="welcome-container">
         <p class="welcome-text">Buscar Guía</p>
         <div class="form-container">
-            <form action="procesar_busqueda" method="POST">
+            <form action="procesar_busqueda.php" method="POST">
                 <label for="telefono">Ingrese su número de teléfono de cliente:</label>
                 <input type="number" id="telefono" name="telefono" required>
                 <br><br>

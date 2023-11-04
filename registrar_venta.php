@@ -26,7 +26,7 @@ if (isset($_SESSION["nombre"])) {
 
    <?php
   
-
+  include 'ConexionBD/conexion.php';
 $servername = "localhost"; // Cambia esto si tu servidor MySQL no se encuentra en localhost
 $username = "id21397617_root"; // Cambia esto por tu nombre de usuario MySQL
 $password = "Three365Meda53*"; // Cambia esto por tu contraseña MySQL
@@ -78,7 +78,7 @@ if ($conn->connect_error) {
     <script>
          function regresarAIndex() {
             // Redireccionar a index.php
-            window.location.href = "https://ctoys.000webhostapp.com/dashboard";
+            window.location.href = "http://localhost/capitantoys/capitantoys/dashboard.php";
         }
     </script>
 
