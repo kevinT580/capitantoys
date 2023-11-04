@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO registroclientes (Nombre, Telefono, direccioncliente) VALUES ('$nombre', '$telefono', '$direccioncliente')";
 
     if ($conn->query($sql) === TRUE) {
-        echo '<script>alert("Cliente registrado exitosamente."); window.location.href = "https://ctoys.000webhostapp.com/registro_clientes";</script>';
+        echo '<script>alert("Cliente registrado exitosamente."); window.location.href = "http://localhost/capitantoys/capitantoys/registro_clientes.php";</script>';
     } else {
         echo "Error al registrar al cliente: " . $conn->error;
     }

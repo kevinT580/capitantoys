@@ -13,11 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("sss", $nombre, $contrasena, $rol);
         if ($stmt->execute()) {
             // Registro exitoso, redirige a la página de registro de usuarios
-            header("Location: https://ctoys.000webhostapp.com/registrar_usuarios");
+            header("Location: http://localhost/capitantoys/capitantoys/registrar_usuarios.php");
             exit();
         } else {
             // Error al insertar el usuario, muestra un mensaje de error
-            echo "Error al registrar el usuario. <a https://ctoys.000webhostapp.com/registrar_usuarios'>Volver a intentar</a>";
+            echo "Error al registrar el usuario. <a http://localhost/capitantoys/capitantoys/registrar_usuarios.php'>Volver a intentar</a>";
         }
 
         $stmt->close();

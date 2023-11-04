@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         } else {
             // Credenciales incorrectas, muestra un mensaje de error
-            echo "Credenciales incorrectas. <a href='https://ctoys.000webhostapp.com/'>Volver a intentar</a>";
+            echo "Credenciales incorrectas. <a href='http://localhost/capitantoys/capitantoys'>Volver a intentar</a>";
         }
 
         $stmt->close();

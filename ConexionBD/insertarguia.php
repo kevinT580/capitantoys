@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO ingresarguiaenvio (guiaPaquete, Paqueteria, telefono) VALUES ('$numguia', '$opcionp', '$telefono')";
 
     if ($conn->query($sql) === TRUE) {
-        echo '<script>alert("Cliente registrado exitosamente."); window.location.href = "https://ctoys.000webhostapp.com/ingreso_guia";</script>';
+        echo '<script>alert("Cliente registrado exitosamente."); window.location.href = "http://localhost/capitantoys/capitantoys/ingreso_guia.php";</script>';
     } else {
         echo "Error al registrar al cliente: " . $conn->error;
     }

@@ -36,7 +36,7 @@ if (isset($_SESSION["nombre"])) {
         
         <br><br>
       <button class="button" onclick="regresarAIndex()">Regresar</button>
-<a class="button" href="http://localhost/capitantoys/capitantoys/reporte_usuarios.php">Ver Usuarios</a>
+<a class="button" href="http://localhost/capitantoys/capitantoys/dashboard.php">Ver Usuarios</a>
     <script>
         function regresarAIndex() {
             // Redireccionar a index.php
