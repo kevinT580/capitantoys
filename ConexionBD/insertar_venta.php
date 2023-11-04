@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // $sql = "INSERT INTO registroclientes (Nombre, Telefono) VALUES ('$nombre', '$telefono')";
    $sql ="INSERT INTO registroventas(FechaVenta, NombreArticulo, Precio, IDCliente) VALUES ('$FechaVenta','$NombreArticulo','$Precio','$cliente_id')";
    if ($conn->query($sql) === TRUE) {
-    echo '<script>alert("COMPRA registrado exitosamente."); window.location.href = "https://ctoys.000webhostapp.com/registrar_venta.php";</script>';
+    echo '<script>alert("COMPRA registrado exitosamente."); window.location.href = "https://ctoys.000webhostapp.com/registrar_venta";</script>';
 } else {
     echo "Error al registrar al cliente: " . $conn->error;
 }

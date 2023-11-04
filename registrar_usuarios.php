@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+if (isset($_SESSION["nombre"])) {
+    // La sesión está iniciada y el usuario está autenticado, muestra el contenido del formulario
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +14,8 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <div class="user-registration-container">
-        <h2>Registrar Usuario</h2>
+    <div class="welcome-container">
+        <h2>Registrar Usuario de Sistema</h2>
         <form action="ConexionBD/insertar_usuario.php" method="POST">
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" required>
@@ -26,7 +33,29 @@
             <br><br>
 
             <button class="button" type="submit">Registrar</button>
+        
+        <br><br>
+      <button class="button" onclick="regresarAIndex()">Regresar</button>
+<a class="button" href="https://ctoys.000webhostapp.com/reporte_usuarios">Ver Usuarios</a>
+    <script>
+        function regresarAIndex() {
+            // Redireccionar a index.php
+            window.location.href = "https://ctoys.000webhostapp.com/dashboard";
+        }
+    </script>
+        
+        
         </form>
+        
+        
     </div>
+    
 </body>
 </html>
+<?php
+} else {
+    // La sesión no está iniciada o el usuario no está autenticado, redirige al inicio de sesión
+        echo "NO PUEDE ACCEDER A ESTE SITIO.";
+    exit();
+}
+?>

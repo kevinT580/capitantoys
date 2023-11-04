@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 17-10-2023 a las 04:34:34
+-- Tiempo de generación: 04-11-2023 a las 03:20:39
 -- Versión del servidor: 10.5.20-MariaDB
 -- Versión de PHP: 7.3.33
 
@@ -30,16 +30,19 @@ SET time_zone = "+00:00";
 CREATE TABLE `ingresarguiaenvio` (
   `IDG` int(10) NOT NULL,
   `guiaPaquete` varchar(13) NOT NULL,
-  `Paqueteria` varchar(13) NOT NULL
+  `Paqueteria` varchar(13) NOT NULL,
+  `telefono` int(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `ingresarguiaenvio`
 --
 
-INSERT INTO `ingresarguiaenvio` (`IDG`, `guiaPaquete`, `Paqueteria`) VALUES
-(1, 'GT54875125', 'CargoExpreso'),
-(2, 'GTX502', '1');
+INSERT INTO `ingresarguiaenvio` (`IDG`, `guiaPaquete`, `Paqueteria`, `telefono`) VALUES
+(1, 'GT54875125', 'CargoExpreso', 0),
+(2, 'GTX502', '1', 0),
+(3, 'FOX2023', 'FedEx', 0),
+(4, 'GZGT01', 'CPX', 53449438);
 
 -- --------------------------------------------------------
 
@@ -50,19 +53,20 @@ INSERT INTO `ingresarguiaenvio` (`IDG`, `guiaPaquete`, `Paqueteria`) VALUES
 CREATE TABLE `registroclientes` (
   `IDCliente` int(11) NOT NULL,
   `Nombre` varchar(255) NOT NULL,
-  `Telefono` varchar(15) DEFAULT NULL
+  `Telefono` varchar(15) DEFAULT NULL,
+  `direccioncliente` varchar(85) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `registroclientes`
 --
 
-INSERT INTO `registroclientes` (`IDCliente`, `Nombre`, `Telefono`) VALUES
-(1, 'MJ', '53893090'),
-(2, 'KT', '30768391'),
-(3, 'EP', '22554979'),
-(4, 'AP', '58800025'),
-(5, 'FV', '54879521');
+INSERT INTO `registroclientes` (`IDCliente`, `Nombre`, `Telefono`, `direccioncliente`) VALUES
+(1, 'MJ', '53893090', ''),
+(2, 'KT', '30768391', ''),
+(3, 'EP', '22554979', ''),
+(4, 'AP', '58800025', ''),
+(9, 'q', '112324', '');
 
 -- --------------------------------------------------------
 
@@ -84,7 +88,8 @@ CREATE TABLE `registroventas` (
 
 INSERT INTO `registroventas` (`IDVenta`, `FechaVenta`, `NombreArticulo`, `Precio`, `IDCliente`) VALUES
 (1, '2023-10-14', 'Batman Lego', 100.00, 1),
-(2, '2023-10-14', 'superman', 150.00, 2);
+(2, '2023-10-14', 'superman', 150.00, 2),
+(4, '2023-11-03', 'chapulin', 25.75, 9);
 
 -- --------------------------------------------------------
 
@@ -116,11 +121,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`idUsuario`, `nombre`, `contrasena`, `rol`) VALUES
-(2, 'maria', '$2y$10$4a9VbO4nn/bYxcOCqia.sellBHVBWbZkDTCOdfzOUMCis.0GX5R82', ''),
 (3, 'kevin', '$2y$10$1VoAqMOOZks8RYT67c/tFedP8LmiQWhzZW4tK3eGHVGRjNXeoojlm', 'administrador'),
-(5, 'alex', '$2y$10$ws0AVrpPzLVbYCdJuYeRCepP46KvlnFrQO2oSRJ6eU4PITJ41qHbK', 'administrador'),
 (6, 'admin', '$2y$10$c9DIvWxVMOP5xqqI9oYfFOje6nEINxFrIlGQCteQIFSqevWK/r2Za', 'administrador'),
-(8, 'fernando', '$2y$10$zs8D.kLEXPGvKgI/OOagbOc/I0yRSE/Ij1XpR8qvCvzh8AKKxcM26', 'administrador');
+(8, 'fernando', '$2y$10$zs8D.kLEXPGvKgI/OOagbOc/I0yRSE/Ij1XpR8qvCvzh8AKKxcM26', 'administrador'),
+(11, 'pedro.marmol', '$2y$10$cUiAl9TeoTWwasNfUB6Y9uarxpaDG7cwFK9J0MInmrPemqNfCzPnO', 'empleado');
 
 -- --------------------------------------------------------
 
@@ -185,25 +189,25 @@ ALTER TABLE `verificarguia`
 -- AUTO_INCREMENT de la tabla `ingresarguiaenvio`
 --
 ALTER TABLE `ingresarguiaenvio`
-  MODIFY `IDG` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `IDG` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `registroclientes`
 --
 ALTER TABLE `registroclientes`
-  MODIFY `IDCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `IDCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `registroventas`
 --
 ALTER TABLE `registroventas`
-  MODIFY `IDVenta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `IDVenta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Restricciones para tablas volcadas

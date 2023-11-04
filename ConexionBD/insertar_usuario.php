@@ -12,12 +12,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt = $conn->prepare($sql)) {
         $stmt->bind_param("sss", $nombre, $contrasena, $rol);
         if ($stmt->execute()) {
-            // Registro exitoso, redirige a alguna página de éxito o muestra un mensaje
-          echo "EXITOSO <a href='https://ctoys.000webhostapp.com/registrar_usuarios.php'>REGRESAR</a>";
+            // Registro exitoso, redirige a la página de registro de usuarios
+            header("Location: https://ctoys.000webhostapp.com/registrar_usuarios");
             exit();
         } else {
             // Error al insertar el usuario, muestra un mensaje de error
-            echo "Error al registrar el usuario. <a href='registrar_usuarios.php'>Volver a intentar</a>";
+            echo "Error al registrar el usuario. <a https://ctoys.000webhostapp.com/registrar_usuarios'>Volver a intentar</a>";
         }
 
         $stmt->close();

@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+if (isset($_SESSION["nombre"])) {
+    // La sesión está iniciada y el usuario está autenticado, muestra el contenido del formulario
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,9 +17,12 @@
     <div class="welcome-container">
         <p class="welcome-text">¡Bienvenido!</p>
         <div class="button-container">
-        <form action="ConexionBD/insertarguia.php" method="POST">
+        <form action="ConexionBD/insertarguia" method="POST">
     <label for="numguia">GUÍA:</label>
     <input type="text" id="numguia" name="numguia" required>
+    <br><br>
+     <label for="telefono">Teléfono:</label>
+    <input type="number" id="telefono" name="telefono" required>
     <br><br>
     <label for="opcionp">Nombre:</label>
     <select id="opcionp" name="opcionp" required>
@@ -24,7 +34,7 @@
         <option value="CPX">CPX</option>
     </select>
     <br><br>
-    <input  type="submit" value="Registrar Guiaxx" class="button" >
+    <input  type="submit" value="Registrar Guia" class="button" >
 </form>
         </div>
     </div>
@@ -34,8 +44,15 @@
     <script>
         function regresarAIndex() {
             // Redireccionar a index.php
-            window.location.href = "https://ctoys.000webhostapp.com";
+            window.location.href = "https://ctoys.000webhostapp.com/dashboard";
         }
     </script>
 </body>
 </html>
+<?php
+} else {
+    // La sesión no está iniciada o el usuario no está autenticado, redirige al inicio de sesión
+        echo "NO PUEDE ACCEDER A ESTE SITIO.";
+    exit();
+}
+?>

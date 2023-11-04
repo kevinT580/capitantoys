@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Consulta para verificar las credenciales del usuario en la tabla 'usuarios'
-    $sql = "SELECT * FROM usuarios WHERE nombre = ?";
+    $sql = "SELECT nombre, rol, contrasena FROM usuarios WHERE nombre = ?";
 
     if ($stmt = $conn->prepare($sql)) {
         $stmt->bind_param("s", $nombre);
@@ -24,7 +24,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($row && password_verify($contrasena, $row["contrasena"])) {
             // Credenciales correctas, inicia la sesión
             $_SESSION["nombre"] = $nombre;
-            header("Location: https://ctoys.000webhostapp.com/dashboard.php");
+            
+            if ($row["rol"] === "administrador") {
+                header("Location: https://ctoys.000webhostapp.com/dashboard");
+            } elseif ($row["rol"] === "empleado") {
+                header("Location: https://ctoys.000webhostapp.com/dashboard_em");
+            } else {
+                // Tipo de usuario desconocido, muestra un mensaje de error
+                echo "Tipo de usuario desconocido.";
+            }
             exit();
         } else {
             // Credenciales incorrectas, muestra un mensaje de error

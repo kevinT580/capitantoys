@@ -20,7 +20,6 @@ if (isset($_SESSION["nombre"])) {
 <a href="registrar_venta" class="button">Registro Ventas</a>
 <a href="reporte" class="button">Reporte Diario</a>
 <a href="ingreso_guia" class="button">Ingresar Guía de Envío</a>
-<a href="registrar_usuarios" class="button">Crear Usuarios</a>
 <a href="guia" class="button">Verificar Guía</a>
 
  

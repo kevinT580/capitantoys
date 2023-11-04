@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+if (isset($_SESSION["nombre"])) {
+    // La sesión está iniciada y el usuario está autenticado, muestra el contenido del formulario
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -60,7 +67,7 @@ if ($conn->connect_error) {
             <label class="form-label" for="Precio">Precio del Artículo:</label>
             <input class="form-input" type="number" step="0.01" name="Precio" id="Precio" required>
 
-            <input class="form-button" type="submit" value="Guardar Venta">
+            <input class="button" type="submit" value="Guardar Venta">
    
 
     </form>
@@ -71,9 +78,16 @@ if ($conn->connect_error) {
     <script>
          function regresarAIndex() {
             // Redireccionar a index.php
-            window.location.href = "https://ctoys.000webhostapp.com";
+            window.location.href = "https://ctoys.000webhostapp.com/dashboard";
         }
     </script>
 
     </body>
 </html>
+<?php
+} else {
+    // La sesión no está iniciada o el usuario no está autenticado, redirige al inicio de sesión
+        echo "NO PUEDE ACCEDER A ESTE SITIO.";
+    exit();
+}
+?>
