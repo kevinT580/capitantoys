@@ -6,11 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contrasena = $_POST["contrasena"];
 
     // Conexión a la base de datos (debes configurar la conexión)
-    $conn = new mysqli("localhost", "id21397617_root", "Three365Meda53*", "id21397617_prueba2023_1");
-
-    if ($conn->connect_error) {
-        die("Error de conexión: " . $conn->connect_error);
-    }
+    include 'conexion.php';
 
     // Consulta para verificar las credenciales del usuario en la tabla 'usuarios'
     $sql = "SELECT nombre, rol, contrasena FROM usuarios WHERE nombre = ?";
@@ -26,9 +22,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["nombre"] = $nombre;
             
             if ($row["rol"] === "administrador") {
-                header("Location: https://ctoys.000webhostapp.com/dashboard");
+                header("Location: http://localhost/capitantoys/capitantoys/dashboard.php");
             } elseif ($row["rol"] === "empleado") {
-                header("Location: https://ctoys.000webhostapp.com/dashboard_em");
+                header("Location: http://localhost/capitantoys/capitantoys/dashboard_em.php");
             } else {
                 // Tipo de usuario desconocido, muestra un mensaje de error
                 echo "Tipo de usuario desconocido.";

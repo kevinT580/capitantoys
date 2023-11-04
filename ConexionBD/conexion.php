@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost"; // Cambia esto si tu servidor MySQL no se encuentra en localhost
-$username = "id21397617_root"; // Cambia esto por tu nombre de usuario MySQL
-$password = "Three365Meda53*"; // Cambia esto por tu contraseña MySQL
+$username = "root"; // Cambia esto por tu nombre de usuario MySQL
+$password = "123"; // Cambia esto por tu contraseña MySQL
 $database = "id21397617_prueba2023_1"; // Nombre de la base de datos
 
 // Crear conexión
